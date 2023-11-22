@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace LTrainorFirstPlayable
 {
@@ -24,10 +25,13 @@ namespace LTrainorFirstPlayable
         static string flower = ($"{asciiEncoder.GetString(new byte[1] { 145 })}");
         static string grass = ($"{asciiEncoder.GetString(new byte[1] { 176 })}");
         static string solid = ($"{asciiEncoder.GetString(new byte[1] { 221 })}");
+        static char heart = Convert.ToChar(3);
+        static int playerX = 5;
+        static int playerY = 5;
+        
         static void Main(string[] args)
         {
             DisplayMap();
-            Console.ReadKey();
         }
 
         static void DisplayMap()
@@ -130,17 +134,12 @@ namespace LTrainorFirstPlayable
                         ColorChange(ConsoleColor.DarkGreen, ConsoleColor.White);
                         Console.Write(flower);
                     }
-                    else
-                    {
-                        Console.Write(map[x][y]);
-                    }
                 }
                 ColorChange(ConsoleColor.Black, ConsoleColor.White);
                 Console.Write(borderVertical);
                 Console.Write("\n");
             }
             DisplayBorderBottom();
-            //DisplayLegend();
         }
 
         static void DisplayBorderTop()
