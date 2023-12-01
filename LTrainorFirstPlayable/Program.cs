@@ -369,7 +369,7 @@ namespace LTrainorFirstPlayable
             DisplayBorderBottom();
             ColorChange(ConsoleColor.DarkCyan, ConsoleColor.White);
             Console.SetCursorPosition(playerX, playerY);
-            Console.Write(map[playerX][playerY]);
+            Console.Write(player);
             ColorChange(ConsoleColor.DarkRed, ConsoleColor.White);
             Console.SetCursorPosition(enemyX, enemyY);
             Console.Write(enemy);
@@ -394,12 +394,12 @@ namespace LTrainorFirstPlayable
             Console.Write(solid);
             Console.SetCursorPosition(map[0].Length + 5, 3);
             ColorChange(ConsoleColor.White, ConsoleColor.Black);
-            Console.Write(borderBL);
+            Console.Write(borderL);
             for (int i = 1; i < 11; i++)
             {
                 Console.Write(borderHorizontal);
             }
-            Console.Write(borderBR);
+            Console.Write(borderR);
             ColorChange(ConsoleColor.Black, ConsoleColor.Black);
             Console.Write(solid);
             Console.SetCursorPosition(map[0].Length + 5, 4);
